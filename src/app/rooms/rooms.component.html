@@ -1,0 +1,20 @@
+<h1 [hidden]="hiddenrooms">Welcome {{ hotelName }}</h1>
+Num of Rooms
+<h1 [innerText]="numOfRoom"></h1>
+{{ room?.available ?? "Norooms" }}
+<div *[ngStyle]="{ color: room.available ? 'green' : 'red' }" >Available</div>
+<button (click)="toggle()">Toggle</button>
+<table>
+  <tr>
+    <th>Room Type</th>
+    <th>Prices</th>
+    <th>Code</th>
+    <th>Consent</th>
+  </tr>
+  <tr *ngFor="let room of roomListData">
+    <td>{{ room.roomType }}</td>
+    <td>{{ room.prices }}</td>
+    <td>{{ room.code }}</td>
+    <td>{{ room.agreed }}</td>
+  </tr>
+</table>
